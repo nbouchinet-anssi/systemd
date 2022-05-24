@@ -69,3 +69,10 @@ Packages=
         dnsmasq
         wireguard-tools
         dhcp
+
+        # For testing "systemd-crypt{enroll,setup}"
+        libfido2
+        pcsclite
+        gcc
+        expect
+        cryptsetup

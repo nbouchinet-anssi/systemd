@@ -24,6 +24,9 @@ if install_tests
         install_subdir('test-umount',
                        exclude_files : '.gitattributes',
                        install_dir : testdata_dir)
+        install_subdir('test-disk-encryption',
+                       exclude_files : '.gitattributes',
+                       install_dir : testdata_dir)
         install_subdir('test-network-generator-conversion',
                        exclude_files : '.gitattributes',
                        install_dir : testdata_dir)
@@ -91,6 +94,7 @@ test_network_generator_conversion_sh = find_program('test-network-generator-conv
 test_systemctl_enable_sh = find_program('test-systemctl-enable.sh')
 test_systemd_tmpfiles_py = find_program('test-systemd-tmpfiles.py')
 hwdb_test_sh = find_program('hwdb-test.sh')
+test_disk_encryption_sh = find_program('test-disk-encryption.sh')
 
 ############################################################
 
@@ -136,6 +140,9 @@ if install_tests
                      install_dir : testsdir)
 
         install_data('test-network-generator-conversion.sh',
+                     install_mode : 'rwxr-xr-x',
+                     install_dir : testsdir)
+        install_data('test-disk-encryption.sh',
                      install_mode : 'rwxr-xr-x',
                      install_dir : testsdir)
 endif
